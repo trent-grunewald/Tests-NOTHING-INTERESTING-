@@ -109,20 +109,31 @@
 // ---------------------------------------------------------------STRING OPERATORS-----------
 
 
-const firstName = 'Trent';
+const firstName = 'trent';
 const lastName = 'Grunewald';
 const age = 31;
 
 //Concatent
 let val = firstName + " " + lastName; // THE + " " + IS CONCATINATION!!!
+val = "Hi, I am " + firstName + " " + lastName + " and I will be a Web Developer at " + age;
+
+//concat()
+val = firstName.concat(" ", lastName);
 
 //Append
 val = "Trent ";
 val += "Grunewald"; //the += is the appendage 
 
-val = "Hi, I am " + firstName + " " + lastName + " and I will be a Web Developer at " + age;
 
 //Escaping
 val = 'That\'s awesome, I can\'t wait' //the \ is the escape, it prevents the single quote from ending the quotation, but, you could just use double quotes as the wrapper
+
+//Change case
+val = firstName.toUpperCase(); //converts to uppercase.
+val = firstName.toLowerCase(); // converts to lowercase.
+
+//indexOf()
+val = firstName.indexOf('t');
+val = firstName.lastIndexOf('t'); //finds the index of the LAST t
 
 console.log(val);
