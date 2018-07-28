@@ -109,49 +109,76 @@
 // ---------------------------------------------------------------STRING OPERATORS-----------
 
 
+// const firstName = 'trentr';
+// const lastName = 'Grunewald';
+// const age = 31;
+// const str = "Web Design, Web Development, Javascript, Vue"
+
+// //Concatent
+// let val = firstName + " " + lastName; // THE + " " + IS CONCATINATION!!!
+// val = "Hi, I am " + firstName + " " + lastName + " and I will be a Web Developer at " + age;
+
+// //concat()
+// val = firstName.concat(" ", lastName);
+
+// //Append
+// val = "Trent ";
+// val += "Grunewald"; //the += is the appendage 
+
+
+// //Escaping
+// val = 'That\'s awesome, I can\'t wait' //the \ is the escape, it prevents the single quote from ending the quotation, but, you could just use double quotes as the wrapper
+
+// //Change case
+// val = firstName.toUpperCase(); //converts to uppercase.
+// val = firstName.toLowerCase(); // converts to lowercase.
+
+// //indexOf()
+// val = firstName.indexOf('t');
+// val = firstName.lastIndexOf('t'); //finds the index of the LAST "t"
+
+// //charAt()
+// val = firstName.charAt("2");//returns the character at "2";
+// //Get Last Character
+// val = firstName.charAt(firstName.length - 1);//will return the last character of the variable.
+// //substring()
+// val = firstName.substring(0,4);//will only return the first 4 characters
+// //slice()
+// val = firstName.slice(-3);//starts from the back and returns the last 3.
+// //split()
+// val = str.split(',')//splits into an array based on what is quoted, in this case , 
+
+// //replace()
+// val = str.replace("Vue", "React");//replaces Vue with React CAPITALIZATION SENSITIVE
+
+// //includes()
+// val = str.includes("Web")//checks if the word "Web" is in the variable and returns a boolean.
+
+// console.log(val);
+
+
+// ----------------------------------------------------------------------------TEMPLATE LITERALS------
+
+
 const firstName = 'trentr';
 const lastName = 'Grunewald';
-const age = 31;
-const str = "Web Design, Web Development, Javascript, Vue"
+const job = "Web Development";
+const age = "31";
+const city = "Yakima";
+let html;
 
-//Concatent
-let val = firstName + " " + lastName; // THE + " " + IS CONCATINATION!!!
-val = "Hi, I am " + firstName + " " + lastName + " and I will be a Web Developer at " + age;
+//template strings
+// the top ` is NOT A SINGLE QUOTE... It is above the top left tab key
+html = `
+        <ul>
+          <li>Name: ${firstName}</li>
+          <li>Last: ${lastName}</li>
+          <li>Job: ${job}</li>
+          <li>city: ${city}</li>
+          <li>${2 + 2 }</li>
+          <li>${age > 30 ? 'over 30' : "under 30"}</li>
+        </ul>
+`;
 
-//concat()
-val = firstName.concat(" ", lastName);
 
-//Append
-val = "Trent ";
-val += "Grunewald"; //the += is the appendage 
-
-
-//Escaping
-val = 'That\'s awesome, I can\'t wait' //the \ is the escape, it prevents the single quote from ending the quotation, but, you could just use double quotes as the wrapper
-
-//Change case
-val = firstName.toUpperCase(); //converts to uppercase.
-val = firstName.toLowerCase(); // converts to lowercase.
-
-//indexOf()
-val = firstName.indexOf('t');
-val = firstName.lastIndexOf('t'); //finds the index of the LAST "t"
-
-//charAt()
-val = firstName.charAt("2");//returns the character at "2";
-//Get Last Character
-val = firstName.charAt(firstName.length - 1);//will return the last character of the variable.
-//substring()
-val = firstName.substring(0,4);//will only return the first 4 characters
-//slice()
-val = firstName.slice(-3);//starts from the back and returns the last 3.
-//split()
-val = str.split(',')//splits into an array based on what is quoted, in this case , 
-
-//replace()
-val = str.replace("Vue", "React");//replaces Vue with React CAPITALIZATION SENSITIVE
-
-//includes()
-val = str.includes("Web")//checks if the word "Web" is in the variable.
-
-console.log(val);
+document.body.innerHTML = html;
