@@ -157,28 +157,81 @@
 // console.log(val);
 
 
-// ----------------------------------------------------------------------------TEMPLATE LITERALS------
+// -----------------------------------------------------------TEMPLATE LITERALS------
 
 
-const firstName = 'trentr';
-const lastName = 'Grunewald';
-const job = "Web Development";
-const age = "31";
-const city = "Yakima";
-let html;
+// const firstName = 'trentr';
+// const lastName = 'Grunewald';
+// const job = "Web Development";
+// const age = "31";
+// const city = "Yakima";
+// let html;
 
-//template strings
-// the top ` is NOT A SINGLE QUOTE... It is above the top left tab key
-html = `
-        <ul>
-          <li>Name: ${firstName}</li>
-          <li>Last: ${lastName}</li>
-          <li>Job: ${job}</li>
-          <li>city: ${city}</li>
-          <li>${2 + 2 }</li>
-          <li>${age > 30 ? 'over 30' : "under 30"}</li>
-        </ul>
-`;
+// //template strings
+// // the top ` is NOT A SINGLE QUOTE... It is above the top left tab key
+// html = `
+//         <ul>
+//           <li>Name: ${firstName}</li>
+//           <li>Last: ${lastName}</li>
+//           <li>Job: ${job}</li>
+//           <li>city: ${city}</li>
+//           <li>${2 + 2 }</li>
+//           <li>${age > 30 ? 'over 30' : "under 30"}</li>
+//         </ul>
+// `;
 
 
-document.body.innerHTML = html;
+// document.body.innerHTML = html;
+
+
+// -------------------------------------------------ARRAYS------
+
+// const numbers = [43, 65, 23, 42, 35,67];
+// const numbers2 = ["hi", "bye", "sign out", "login"];
+
+// let val;
+
+// //get Array Length
+// val = numbers.length;
+// //check if it is an array
+// val = Array.isArray(numbers);//checks if the array is a number, string, etc.
+// //get single value from the array
+// val = numbers[3];
+// //change something to the array[2] is the place I want to change
+// numbers[2] = 7;
+// //find index value;
+// val = numbers.indexOf(67);
+// //adding to the end of the array
+// numbers.push(777)
+// //add to front
+// numbers.unshift(77);
+// //remove from the end;
+// numbers.pop();
+// //remove from front
+// numbers.shift();
+// //remove from index
+// numbers.splice(0,1)//has to include start and end location
+// //reverse array
+// numbers.reverse();
+// //concat arrays
+// val = numbers.concat(numbers2);
+// //sorting an array
+// val = numbers2.sort();
+// //order array by numbers
+// val = numbers.sort(function(x, y){
+//   return x - y;
+// })
+// // ----------------------------------------
+// //reverse Sort (highest first)
+// val = numbers.sort(function(x, y){
+//   return y - x;
+// })
+// // ---------------------------------------
+// //find under specific number
+// function under50(num){
+//   return num < 50;
+// }
+// val = numbers.find(under50);
+// // ---------------------------------------
+
+console.log(val);
