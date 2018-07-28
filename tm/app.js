@@ -109,9 +109,10 @@
 // ---------------------------------------------------------------STRING OPERATORS-----------
 
 
-const firstName = 'trent';
+const firstName = 'trentr';
 const lastName = 'Grunewald';
 const age = 31;
+const str = "Web Design, Web Development, Javascript, Vue"
 
 //Concatent
 let val = firstName + " " + lastName; // THE + " " + IS CONCATINATION!!!
@@ -134,6 +135,23 @@ val = firstName.toLowerCase(); // converts to lowercase.
 
 //indexOf()
 val = firstName.indexOf('t');
-val = firstName.lastIndexOf('t'); //finds the index of the LAST t
+val = firstName.lastIndexOf('t'); //finds the index of the LAST "t"
+
+//charAt()
+val = firstName.charAt("2");//returns the character at "2";
+//Get Last Character
+val = firstName.charAt(firstName.length - 1);//will return the last character of the variable.
+//substring()
+val = firstName.substring(0,4);//will only return the first 4 characters
+//slice()
+val = firstName.slice(-3);//starts from the back and returns the last 3.
+//split()
+val = str.split(',')//splits into an array based on what is quoted, in this case , 
+
+//replace()
+val = str.replace("Vue", "React");//replaces Vue with React CAPITALIZATION SENSITIVE
+
+//includes()
+val = str.includes("Web")//checks if the word "Web" is in the variable.
 
 console.log(val);
