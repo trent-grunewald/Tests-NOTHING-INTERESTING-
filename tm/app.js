@@ -234,4 +234,49 @@
 // val = numbers.find(under50);
 // // ---------------------------------------
 
-console.log(val);
+// -------------------------------------------------------------------------OBJECT LITERALS-------
+
+
+// const person = {
+//   firstName: 'Trent',
+//   lastName: 'Grunewald',
+//   age: 31,
+//   birthYear: function(){
+//     return 2018 - this.age;
+//   },
+//   career: 'Web Development',
+//   address: {
+//     city:'Yakima',
+//     state: 'Washington'
+//   },
+//   hobbies: ['games', 'horror movies', 'code']
+// }
+
+// let val;
+// val = person
+
+// //Get specific Value
+// val = person.career;
+// //get a specific value from an object
+// val = person.address.state;
+// //get a specific value from an array
+// val = person.hobbies[1];
+// //return a function
+// val = person.birthYear();
+
+// console.log(val);
+
+// -------------------------------------------------------
+
+const people = [
+  {name: 'john', age: 30},
+  {name: 'trent', age: 31},
+  {name: 'mike', age: 51}
+];
+
+for(let i = 0; i < people.length; i++){
+  console.log(people[i].name);
+}
+
+
+
