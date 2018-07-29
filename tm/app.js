@@ -268,15 +268,45 @@
 
 // -------------------------------------------------------
 
-const people = [
-  {name: 'john', age: 30},
-  {name: 'trent', age: 31},
-  {name: 'mike', age: 51}
-];
+// const people = [
+//   {name: 'john', age: 30},
+//   {name: 'trent', age: 31},
+//   {name: 'mike', age: 51}
+// ];
 
-for(let i = 0; i < people.length; i++){
-  console.log(people[i].name);
-}
+// for(let i = 0; i < people.length; i++){
+//   console.log(people[i].name);
+// }
 
 
+// -----------------------------------------------------------------------DATE AND TIME------------
 
+
+let val;
+
+//automatically creates todays date
+const today = new Date();
+//allows the user to put the date in
+let birthday = new Date('9-1-1987 7:13:03 am');
+//a simpler style of date
+let date= new Date('3/5/1421');
+
+//get Month by number (They start at 0)
+val = today.getMonth();
+//get month / day number
+val = today.getDate();
+//get day by weekday (number based)
+val = today.getDay();
+//get year
+val = today.getFullYear();
+//get time-stamp (Amount of time passed since January 1st)
+val = today.getTime();
+//changes the birthday month (This means user data should be LET, so they can be changed)
+birthday.setMonth(1);
+//changes the birthday date (This means user data should be LET, so they can be changed)
+birthday.setDate(13);
+//changes the birthday month (This means user data should be LET, so they can be changed)
+birthday.setMonth(1);
+
+
+console.log(birthday);
