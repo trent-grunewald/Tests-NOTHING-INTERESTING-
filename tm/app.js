@@ -383,46 +383,84 @@ const age = '31';
 
 // ---------------------------------------------------------------SWITCH STATMENTS
 
-//Use when you have a LOT of different cases, better than "ELSE IF"
-const color = "black";
+// //Use when you have a LOT of different cases, better than "ELSE IF"
+// const color = "black";
 
-switch(color){
-  case 'red':
-  console.log("color is red");
-  break;
-  case 'green':
-  console.log("color is green");
-  break;
-  case 'black':
-  console.log("the color is black");
-  break;
-  default:
-  console.log("color is magical");
-  break;
-}
+// switch(color){
+//   case 'red':
+//   console.log("color is red");
+//   break;
+//   case 'green':
+//   console.log("color is green");
+//   break;
+//   case 'black':
+//   console.log("the color is black");
+//   break;
+//   default:
+//   console.log("color is magical");
+//   break;
+// }
 
-let day;
-switch(new Date().getDay()){
-  case 0:
-  day = "Sunday";
-  break;
-  case 1:
-  day = "Monday";
-  break;
-  case 2:
-  day = "Tuesday";
-  break;
-  case 3:
-  day = "Wednesday";
-  break;
-  case 4:
-  day = "Thursday";
-  break;
-  case 5:
-  day = "Friday";
-  break;
-  case 6:
-  day = "Saturday";
-  break;
-}
-console.log(`Today is ${day}`)
+// let day;
+// switch(new Date().getDay()){
+//   case 0:
+//   day = "Sunday";
+//   break;
+//   case 1:
+//   day = "Monday";
+//   break;
+//   case 2:
+//   day = "Tuesday";
+//   break;
+//   case 3:
+//   day = "Wednesday";
+//   break;
+//   case 4:
+//   day = "Thursday";
+//   break;
+//   case 5:
+//   day = "Friday";
+//   break;
+//   case 6:
+//   day = "Saturday";
+//   break;
+// }
+// console.log(`Today is ${day}`)
+
+// -------------------------------------------------------------FUNCTIONS------------------------
+
+
+//Function Declaration
+// the = in the Paramater is what will be used as a default
+// function greet(firstName = "John", lastName = "Doe"){
+//   return 'Hello ' + firstName + ' ' + lastName;
+// }
+
+// console.log(greet());
+
+// //FUNCTION EXPRESSION
+// //"= 7" will be used as a default
+// const square = function(x = 7){
+//   return x*x
+// };
+
+// console.log(square(10));
+
+// //IMMIDIATLEY INVOKABLE FUNCTION EXPRESSIONS --- IIFEs
+// //Arguements go in the bottom brackets
+// (function(name){
+//   console.log(name + " ran the IFFE..");
+// })('Trent');
+
+// //PROPERTY METHODS --- METHODS ARE FUNCTIONS INSIDE OBJECTS
+// const todo = {
+//   add: function(){
+//     console.log('Add Todo...');
+//   },
+//   edit: function(id){
+//     console.log(`Edit todo ${id}`);
+//   }
+// }
+
+// todo.add();
+// todo.edit(12);
