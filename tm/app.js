@@ -282,31 +282,147 @@
 // -----------------------------------------------------------------------DATE AND TIME------------
 
 
-let val;
+// let val;
 
-//automatically creates todays date
-const today = new Date();
-//allows the user to put the date in
-let birthday = new Date('9-1-1987 7:13:03 am');
-//a simpler style of date
-let date= new Date('3/5/1421');
+// //automatically creates todays date
+// const today = new Date();
+// //allows the user to put the date in
+// let birthday = new Date('9-1-1987 7:13:03 am');
+// //a simpler style of date
+// let date= new Date('3/5/1421');
 
-//get Month by number (They start at 0)
-val = today.getMonth();
-//get month / day number
-val = today.getDate();
-//get day by weekday (number based)
-val = today.getDay();
-//get year
-val = today.getFullYear();
-//get time-stamp (Amount of time passed since January 1st)
-val = today.getTime();
-//changes the birthday month (This means user data should be LET, so they can be changed)
-birthday.setMonth(1);
-//changes the birthday date (This means user data should be LET, so they can be changed)
-birthday.setDate(13);
-//changes the birthday month (This means user data should be LET, so they can be changed)
-birthday.setMonth(1);
+// //get Month by number (They start at 0)
+// val = today.getMonth();
+// //get month / day number
+// val = today.getDate();
+// //get day by weekday (number based)
+// val = today.getDay();
+// //get year
+// val = today.getFullYear();
+// //get time-stamp (Amount of time passed since January 1st)
+// val = today.getTime();
+// //changes the birthday month (This means user data should be LET, so they can be changed)
+// birthday.setMonth(1);
+// //changes the birthday date (This means user data should be LET, so they can be changed)
+// birthday.setDate(13);
+// //changes the birthday month (This means user data should be LET, so they can be changed)
+// birthday.setMonth(1);
 
 
-console.log(birthday);
+// console.log(birthday);
+
+
+// -----------------------------------------------------------------IF STATEMENTS------------
+
+// const color = 'black';
+const id = 101;
+
+// //Equal To
+// if(id == 100){
+//   console.log('correct');
+// } else {
+//   console.log('incorrect');
+// }
+
+// //NOT Equal To
+// if(id != 100){
+//   console.log('correct');
+// } else {
+//   console.log('incorrect');
+// }
+
+// === tests value and type
+// !== Tests "NOT EQUAL TO" value and type
+
+//Check if Variable is defined or not
+// if (typeof id !== "undefined") {
+//   console.log(`the ID is ${id}`);
+// } else {
+//   console.log("The ID is undefined")
+// }
+
+//GREATER OR LESS THAN
+// if (id > 200) {
+//   console.log("incorrect");
+// } else {
+//   console.log("correct";)
+// }
+
+//IF ELSE
+// if(color === 'red'){
+//   console.log("color is red");
+// }else if(color === 'black'){
+//   console.log("color is black");
+// }else{
+//   console.log("color is not red or black")
+// }
+
+//LOGICAL OPERATORS
+const name = 'Trent';
+const age = '31';
+
+// if(age > 17 && age > 21){
+//   console.log(`${name} has full access`);
+// }else if(age >= 17 && age < 21){
+//   console.log(`${name} has access to tobacco`);
+// }else{
+//   console.log(`Please leave ${name}`);
+// }
+
+// OR ||
+// if(age !== 31 || name !== "Trent"){
+//   console.log(`${name} who are you?`);
+// }else{
+//   console.log(`welcome ${name}`)
+// }
+
+//TERNARY OPERATOR
+// ? is the "IF", the first output is what happens if true, the second is if it is false.
+// console.log(id === 101 ? 'correct': 'Incorrect')
+
+
+// ---------------------------------------------------------------SWITCH STATMENTS
+
+//Use when you have a LOT of different cases, better than "ELSE IF"
+const color = "black";
+
+switch(color){
+  case 'red':
+  console.log("color is red");
+  break;
+  case 'green':
+  console.log("color is green");
+  break;
+  case 'black':
+  console.log("the color is black");
+  break;
+  default:
+  console.log("color is magical");
+  break;
+}
+
+let day;
+switch(new Date().getDay()){
+  case 0:
+  day = "Sunday";
+  break;
+  case 1:
+  day = "Monday";
+  break;
+  case 2:
+  day = "Tuesday";
+  break;
+  case 3:
+  day = "Wednesday";
+  break;
+  case 4:
+  day = "Thursday";
+  break;
+  case 5:
+  day = "Friday";
+  break;
+  case 6:
+  day = "Saturday";
+  break;
+}
+console.log(`Today is ${day}`)
