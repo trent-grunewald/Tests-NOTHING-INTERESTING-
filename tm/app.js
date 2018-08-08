@@ -305,20 +305,13 @@
 // birthday.setMonth(1);
 // //changes the birthday date (This means user data should be LET, so they can be changed)
 // birthday.setDate(13);
-<<<<<<< HEAD
-// //changes the birthday year (This means user data should be LET, so they can be changed)
-// birthday.setFullYear(1987);
-=======
 // //changes the birthday month (This means user data should be LET, so they can be changed)
 // birthday.setMonth(1);
 
->>>>>>> f6f0b176e67f25591b053193aed4797b2dca9f7c
 
 // console.log(birthday);
 
 
-<<<<<<< HEAD
-=======
 // -----------------------------------------------------------------IF STATEMENTS------------
 
 // const color = 'black';
@@ -471,4 +464,3 @@ const age = '31';
 
 // todo.add();
 // todo.edit(12);
->>>>>>> f6f0b176e67f25591b053193aed4797b2dca9f7c
