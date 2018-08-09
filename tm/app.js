@@ -315,7 +315,7 @@
 // -----------------------------------------------------------------IF STATEMENTS------------
 
 // const color = 'black';
-const id = 101;
+// const id = 101;
 
 // //Equal To
 // if(id == 100){
@@ -358,8 +358,8 @@ const id = 101;
 // }
 
 //LOGICAL OPERATORS
-const name = 'Trent';
-const age = '31';
+// const name = 'Trent';
+// const age = '31';
 
 // if(age > 17 && age > 21){
 //   console.log(`${name} has full access`);
@@ -464,3 +464,40 @@ const age = '31';
 
 // todo.add();
 // todo.edit(12);
+
+// ----------------------------------------------------------------LOOPS ------------------
+
+
+//FOR LOOP
+//CONTINUE skips the current value
+//BREAK will stop the loop
+// for(let i = 0; i < 10; i++){
+//   if(i === 7){
+//   console.log("my favorite number");
+//   continue;
+// }
+//   console.log(i);
+// }
+
+//WHILE LOOP
+// let i = 0;
+// while(i < 10){
+//   console.log('number ' + i);
+//   i++;
+// }
+
+//DO WHILE LOOP
+//WILL ALWAYS RUN AT LEAST ONCE
+// let i = 0;
+// do{
+//   console.log('DO ' + i);
+//   i++;
+// }
+// while(i < 10);
+
+//LOOPING THROUGH AN ARRAY
+const coffee = ['Guji', 'Folgers', 'rococo', 'Java'];
+
+for(let i = 0; i < coffee.length; i++){
+console.log(coffee[i]);
+};
