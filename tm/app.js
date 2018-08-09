@@ -496,36 +496,123 @@
 // while(i < 10);
 
 //LOOPING THROUGH AN ARRAY
-const coffee = ['Guji', 'Folgers', 'rococo', 'Java'];
-// //WITH A FOR LOOP
-// for(let i = 0; i < coffee.length; i++){
-// console.log(coffee[i]);
-// };
+// const coffee = ['Guji', 'Folgers', 'rococo', 'Java'];
+// // //WITH A FOR LOOP
+// // for(let i = 0; i < coffee.length; i++){
+// // console.log(coffee[i]);
+// // };
 
-//FOR EACH METHOD
-// coffee.forEach(function(coffee){
-//   console.log(coffee);
-// })
+// //FOR EACH METHOD
+// // coffee.forEach(function(coffee){
+// //   console.log(coffee);
+// // })
 
-//MAP
-const users = [
-  {id: 1, name:'tom'},
-  {id: 2, name: 'mike'},
-  {id: 7, name:'Trent'},
-];
+// //MAP
+// const users = [
+//   {id: 1, name:'tom'},
+//   {id: 2, name: 'mike'},
+//   {id: 7, name:'Trent'},
+// ];
 
-const ids = users.map(function(user){
-  return user.id;
-});
-console.log(ids);
+// const ids = users.map(function(user){
+//   return user.id;
+// });
+// console.log(ids);
 
-//FOR IN LOOP
-const user = {
-  firstName: 'mike',
-  lastName: 'Nicolino',
-  age: 44
+// //FOR IN LOOP
+// const user = {
+//   firstName: 'mike',
+//   lastName: 'Nicolino',
+//   age: 44
+// }
+
+// for(let x in user){
+//   console.log(`${x} : ${user[x]}`);
+// }
+
+
+// ----------------------------------------------------------------------------------WINDOW OBJECTS----------------------
+
+
+//ALERT
+// alert("HEyoooooo!!!!!");
+
+//PROMPT
+// const input = prompt();
+// alert(input);
+
+//CONFIRM
+//USED WHEN THE USER IS TRYING TO DELETE
+// if(confirm('Confirm deletion')){
+//   console.log('yes');
+// }else{
+//   console.log('no');
+// }
+
+// let val;
+
+// //outer height and width
+// val = window.outerHeight;
+// val = window.outerWidth;
+
+// //INNER HEIGHT AND WIDTH
+// val = window.innerHeight;
+// val = window.innerWidth;
+
+// //SCROLL POINTS (Requires scroll bar)
+// val = window.scrollY;
+// val = window.scrollX;
+
+// //LOCATION OBJECT
+// val = window.location;
+// //SHOWS DOMAIN NAME
+// val = window.location.hostname;
+// //GIVES PORT NUMBER
+// val = window.location.port;
+// //GIVES SEARCH VALUES(?id=1 after URL)
+// val = window.location.search;
+// //GIVES PROTOCOL-HOST-PORT
+// val = window.location.href;
+
+// //REDIRECT
+// //window.location.href = "http://trentgrunewald.com";
+// //RELOAD
+// //window.location.reload();
+
+// //HISTORY OBJECT
+// //use -1 to go back 1 site, -2 to go back 2 sites, etc.
+// // window.history.go();
+
+// //val = window.history.length;
+
+// //NAVIGATOR OBJECT
+// val = window.navigator;
+
+// console.log(val);
+
+
+// ----------------------------------SCOPE-------------------------------
+
+
+var a = 1;
+let b = 2;
+const c = 3;
+
+//FUNCTION SCOPE
+// function test() {
+//   var a = 4;
+//   let b = 5;
+//   const c = 6;
+//   console.log('function scope ', a, b ,c);
+// }
+
+//BLOCK SCOPE
+//var will be changed in block level scopes, thats why Let and Const are better
+if(true){
+  var a = 4;
+  let b = 5;
+  const c =6;
+  console.log('BLOCK SCOPE ', a, b, c)
 }
 
-for(let x in user){
-  console.log(`${x} : ${user[x]}`);
-}
+console.log('global scope: ', a, b, c);
