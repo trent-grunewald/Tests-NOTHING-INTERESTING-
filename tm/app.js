@@ -497,7 +497,35 @@
 
 //LOOPING THROUGH AN ARRAY
 const coffee = ['Guji', 'Folgers', 'rococo', 'Java'];
+// //WITH A FOR LOOP
+// for(let i = 0; i < coffee.length; i++){
+// console.log(coffee[i]);
+// };
 
-for(let i = 0; i < coffee.length; i++){
-console.log(coffee[i]);
-};
+//FOR EACH METHOD
+// coffee.forEach(function(coffee){
+//   console.log(coffee);
+// })
+
+//MAP
+const users = [
+  {id: 1, name:'tom'},
+  {id: 2, name: 'mike'},
+  {id: 7, name:'Trent'},
+];
+
+const ids = users.map(function(user){
+  return user.id;
+});
+console.log(ids);
+
+//FOR IN LOOP
+const user = {
+  firstName: 'mike',
+  lastName: 'Nicolino',
+  age: 44
+}
+
+for(let x in user){
+  console.log(`${x} : ${user[x]}`);
+}
