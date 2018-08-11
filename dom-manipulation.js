@@ -122,6 +122,36 @@ val = list.childNodes;
 val = list.children;
 val = list.children[2].textContent = "TESTY";
 
-//get child nodes
+//get children of children
+val = list.children[3].children;
+
+//first child
+val = list.firstChild;
+//This one is better.
+val = list.firstElementChild;
+
+//last child
+val = list.lastChild;
+//Better form
+val = list.lastElementChild;
+
+//count child elements
+val = list.childElementCount;
+
+//get parent node
+val = listItem.parentNode;
+
+//get parent of parent.
+val = listItem.parentElement.parentElement;
+
+//get next siblings
+val = listItem.nextSibling;
+//better 
+val = listItem.nextElementSibling;
+
+//get previous sibling.
+val = listItem.previousSibling;
+//better
+val = listItem.previousElementSibling;
 
 console.log(val);
