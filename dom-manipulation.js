@@ -3,19 +3,25 @@ console.log(document.getElementById('task-title'));
 
 const taskTitle = document.getElementById('task-title');
 
-//CHANGE STYLE
+//-----------------------------------------------------------------CHANGE STYLE
+
+
 //usually used during an event / dynamic functionality
 taskTitle.style.background = "green";
 taskTitle.style.color = "white";
 taskTitle.style.padding = "5px";
 
-//CHANGE CONTENT
+//----------------------------------------------------------------CHANGE CONTENT
+
+
 taskTitle.textContent = "task ListI";
 taskTitle.innerText = "MY TASKS";
 taskTitle.innerHTML = "<span syle='color:red'>TRENTS LIST</span>";
 
 
-//QUERY SELECTOR 
+// -------------------------------------------------------------QUERY SELECTOR 
+
+
 //more powerful, can use any CSS selector
 console.log(document.querySelector('#task-title'));
 console.log(document.querySelector('.card-title'));
@@ -28,3 +34,8 @@ document.querySelector('ul li').style.color = 'red';
 document.querySelector('li:last-child').style.fontWeight = 'bold';
 //SPECIFIC LI
 document.querySelector('li:nth-Child(3)').style.color = 'orange';
+document.querySelector('li:nth-Child(3)').textContent = 'HEYOOOooooo';
+
+// -----------------------------------------------------------MULTIPLE ELEMENTS
+
+
