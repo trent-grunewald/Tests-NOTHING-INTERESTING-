@@ -54,20 +54,53 @@
 
 
 //BY TAG NAME
-let lis = document.getElementsByTagName('li');
+// let lis = document.getElementsByTagName('li');
+// // console.log(lis);
+
+
+// //CONVERT HTML COLLECTION INTO AN ARRAY
+// lis = Array.from(lis);
+
+// //Reverse Array
+// lis.reverse();
+
+// //FOR EACH - This logs all class names, changes text, and gives index positions(Reversed since the above)
+// lis.forEach(function(li, index){
+//   console.log(li.className);
+//   li.textContent = `${index}: Hello`;
+// });
+
 // console.log(lis);
 
 
-//CONVERT HTML COLLECTION INTO AN ARRAY
-lis = Array.from(lis);
+// -------------------------------------------------------QUERY SELECTOR ALL----
 
-//Reverse Array
-lis.reverse();
 
-//FOR EACH - This logs all class names, changes text, and gives index positions(Reversed since the above)
-lis.forEach(function(li, index){
-  console.log(li.className);
-  li.textContent = `${index}: Hello`;
-});
+//doesn't require you to turn it into an array
+const items = document.querySelectorAll('li');
+//does the same as the above function, in less code
+items.forEach(function(item, index){
+  item.textContent = `${index}: hello`;
+})
 
-console.log(lis);
+//targets the odd and even LI's
+const liOdd = document.querySelectorAll('li:nth-child(odd');
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+//changes the background of every odd list item
+liOdd.forEach(function(li, index) {
+  li.style.background = "pink";
+})
+
+//changes the background of every even list item
+liEven.forEach(function(li){
+  li.style.background = "gray";
+  li.style.color = 'white';
+})
+//or you can do it with a for loop
+for (let i = 0; i < liEven.length; i++) {
+  liEven[i].style.background='yellow';
+}
+  
+
+console.log(items);
