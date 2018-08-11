@@ -111,15 +111,16 @@
 
 let val;
 
-//COLLECTION WILL RETURN EVERY TEXT NODE INSIDE 
+//COLLECTION IS THE UL CLASS, SO EVERY LI INSIDE WILL BE RETURNED. 
 const list = document.querySelector('ul.collection');
 const listItem = document.querySelector('li.collection-item:first-child');
 
 val = listItem;
 //get ChildNodes (NODE LIST)
 val = list.childNodes;
-//get Children (Just the html collection)
+//get Children (Just the html collection) WILL BE USED MOSTLY
 val = list.children;
+val = list.children[2].textContent = "TESTY";
 
 //get child nodes
 
