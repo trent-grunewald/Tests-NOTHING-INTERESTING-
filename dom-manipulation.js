@@ -77,30 +77,50 @@
 
 
 //doesn't require you to turn it into an array
-const items = document.querySelectorAll('li');
-//does the same as the above function, in less code
-items.forEach(function(item, index){
-  item.textContent = `${index}: hello`;
-})
+// const items = document.querySelectorAll('li');
+// //does the same as the above function, in less code
+// items.forEach(function(item, index){
+//   item.textContent = `${index}: hello`;
+// })
 
-//targets the odd and even LI's
-const liOdd = document.querySelectorAll('li:nth-child(odd');
-const liEven = document.querySelectorAll('li:nth-child(even)');
+// //targets the odd and even LI's
+// const liOdd = document.querySelectorAll('li:nth-child(odd');
+// const liEven = document.querySelectorAll('li:nth-child(even)');
 
-//changes the background of every odd list item
-liOdd.forEach(function(li, index) {
-  li.style.background = "pink";
-})
+// //changes the background of every odd list item
+// liOdd.forEach(function(li, index) {
+//   li.style.background = "pink";
+// })
 
-//changes the background of every even list item
-liEven.forEach(function(li){
-  li.style.background = "gray";
-  li.style.color = 'white';
-})
-//or you can do it with a for loop
-for (let i = 0; i < liEven.length; i++) {
-  liEven[i].style.background='yellow';
-}
+// //changes the background of every even list item
+// liEven.forEach(function(li){
+//   li.style.background = "gray";
+//   li.style.color = 'white';
+// })
+// //or you can do it with a for loop
+// for (let i = 0; i < liEven.length; i++) {
+//   liEven[i].style.background='yellow';
+// }
   
 
-console.log(items);
+// console.log(items);
+
+
+// ------------------------------------------------------------TRAVERSING THE DOM
+
+
+let val;
+
+//COLLECTION WILL RETURN EVERY TEXT NODE INSIDE 
+const list = document.querySelector('ul.collection');
+const listItem = document.querySelector('li.collection-item:first-child');
+
+val = listItem;
+//get ChildNodes (NODE LIST)
+val = list.childNodes;
+//get Children (Just the html collection)
+val = list.children;
+
+//get child nodes
+
+console.log(val);
