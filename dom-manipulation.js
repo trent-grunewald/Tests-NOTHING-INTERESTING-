@@ -222,19 +222,78 @@
 
 
 //CLASSES AND ATTRIBUTES
-const firstLi = document.querySelector('li:first-child');
-const link = firstLi.children[0];
-let val;
-//adds a class.
-link.classList.add('test');
-val = link;
-console.log(link);
+// const firstLi = document.querySelector('li:first-child');
+// const link = firstLi.children[0];
+// let val;
+// //adds a class.
+// link.classList.add('test');
+// val = link;
+// console.log(link);
 
 
-//ADDING ATTRIBUTES
-//adds an href attribute
-val = link.getAttribute('href');
-val = link.setAttribute('href', 'http://trentgrunewald.com');
+// //ADDING ATTRIBUTES
+// //adds an href attribute
+// val = link.getAttribute('href');
+// val = link.setAttribute('href', 'http://trentgrunewald.com');
 //Set attribute = .setAttribute('attribute', 'attribute value')
 //Get attribute = .getAttribute('attribute', 'attribute value')
 //Remove attribute = .removeAttribute('attribute', 'attribute value')
+
+
+// -------------------------------------------------EVENTS LISTENERS-----------
+
+//PREVENT DEFAULT = Prevents the button or link from performing default actions
+// .preventDefault();
+
+//click event listener
+// document.querySelector('.clear-tasks').addEventListener('click', onClick);{
+// }
+
+// function onClick(e){
+//   // console.log("hi")
+ 
+//   let val;
+//   val = e;
+//   // e.target = Displays the buttons values.
+//   // e.target.id = Displays the buttons ID.
+//   // e.target.className = displays the buttons classes
+//   // e.target.classList = displays a list of all the classes
+//   //e.target.innerText = "hello" changes the buttons text to "Hello"
+//   e.target.innerText = "hello";
+//   e.preventDefault();
+// };
+
+
+// ----------------------------MOUSE EVENTS--------------------------
+
+
+// const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+// //CLICK EVENT
+// clearBtn.addEventListener('click', runEvent);
+// //DOUBLE CLICK EVENT
+// clearBtn.addEventListener('dblclick', runEvent);
+// //MOUSE DOWN
+// clearBtn.addEventListener('mousedown', runEvent);
+// //MOUSE UP
+// clearBtn.addEventListener('mouseup', runEvent);
+// //Mouse ENTER
+// clearBtn.addEventListener('mouseenter', runEvent);
+// //MOUSE LEAVE
+// clearBtn.addEventListener('mouseleave', runEvent);
+// //MOUSE OUT
+// clearBtn.addEventListener('mouseout', runEvent);
+// //MOUSE OVER
+// clearBtn.addEventListener('mouseover', runEvent);
+// //MOUSE MOVE
+
+card.addEventListener('mousemove', runEvent);
+
+
+//event handler
+function runEvent(e){
+ heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+ document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY},150)`;
+}
