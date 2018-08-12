@@ -405,13 +405,23 @@ let tasks;
 
   if(localStorage.getItem('tasks') === null){
     tasks = [];
-  }elese{
+  } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
 
- localStorage.setItem('task', task);
-  e.preventDefault();
-})
+  //adds the task value to the task.
+  tasks.push(task);
 
+  //Resets the local storage with the added value
+ localStorage.setItem('tasks', JSON.stringify(tasks));
+  e.preventDefault();
+});
 //SAVING AS AN ARRAY
 //can only save arrays by turning them into strings with JSON.stringify... Use JSON.parse when you need to use it.
+
+//JSON.parse
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+tasks.forEach(function(task){
+  console.log(task);
+});
