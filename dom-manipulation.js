@@ -362,13 +362,56 @@ const heading = document.querySelector('h5');
 //------------------------------------------------EVENT DELEGATION------------
 
 
-document.body.addEventListener('click', deleteItem);
+// document.body.addEventListener('click', deleteItem);
 
-function deleteItem(e){
-  //looks at the clicked items classes and deletes it if the class is "Delete-item"
-  if(e.target.parentElement.classList.contains('delete-item')){
-    console.log('Deleted');
-    //removes the tasks parent element
-    e.target.parentElement.parentElement.remove();
-    }
+// function deleteItem(e){
+//   //looks at the clicked items classes and deletes it if the class is "Delete-item"
+//   if(e.target.parentElement.classList.contains('delete-item')){
+//     console.log('Deleted');
+//     //removes the tasks parent element
+//     e.target.parentElement.parentElement.remove();
+//     }
+//   }
+
+
+// --------------------------------------------LOCAL SESSION STORAGE--------
+
+// //SET LOCAL STORAGE ITEM
+// //local storage stays until it is manually cleared out.
+// localStorage.setItem('name', 'Trent');
+
+// //SET SESSION STORAGE ITEM
+// //session storage is deleted once the browser is closed.
+// sessionStorage.setItem('age', '31');
+
+// //REMOVE FROM STORAGE
+// //sessionStorage.removeItem('age');
+// // localStorage.removeItem('name');
+
+// //CLEAR ALL FROM STORAGE
+// // sessionStorage.clear();
+// localStorage.clear();
+
+// // GET FROM STORAGE
+// const name = localStorage.getItem('name');
+// console.log(name);
+
+// //SAVE TO STORAGE
+document.querySelector('form').addEventListener('submit',function(e){
+  const task = document.getElementById('task').value;
+
+////checks to see if something is in there first
+let tasks;
+
+  if(localStorage.getItem('tasks') === null){
+    tasks = [];
+  }elese{
+    tasks = JSON.parse(localStorage.getItem('tasks'));
   }
+
+ localStorage.setItem('task', task);
+  e.preventDefault();
+})
+
+//SAVING AS AN ARRAY
+//can only save arrays by turning them into strings with JSON.stringify... Use JSON.parse when you need to use it.
