@@ -289,11 +289,51 @@ const heading = document.querySelector('h5');
 // clearBtn.addEventListener('mouseover', runEvent);
 // //MOUSE MOVE
 
-card.addEventListener('mousemove', runEvent);
+// card.addEventListener('mousemove', runEvent);
 
 
-//event handler
-function runEvent(e){
- heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
- document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY},150)`;
-}
+// //event handler
+// function runEvent(e){
+//  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+//  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 150)`;
+// }
+
+
+// -----------------------------------------KEYBOARD / FORM EVENTS--------------
+
+
+// const form = document.querySelector('form');
+// let taskInput = document.getElementById('task');
+// const heading = document.querySelector('h5');
+
+// // form.addEventListener('submit', runEvent);
+
+// //KEYDOWN (On key down)
+// taskInput.addEventListener('keydown', runEvent);
+// //KEYUP (On key up)
+// taskInput.addEventListener('keydup', runEvent);
+// //KEYPRESS (On key press)
+// taskInput.addEventListener('keypress', runEvent);
+// //FOCUS - when you click inside of an input and it has focus
+// taskInput.addEventListener('focus', runEvent);
+// //BLUR - when you click outside of an input and it has does not have focus
+// taskInput.addEventListener('blur', runEvent);
+// //CUT - When a user selects "Cut" 
+// taskInput.addEventListener('cut', runEvent);
+// //PASTE - When a user selects "paste" 
+// taskInput.addEventListener('paste', runEvent);
+// //INPUT - Fires off on any input event above
+// taskInput.addEventListener('input', runEvent);
+// //CHANGE - Fires off on any change
+// taskInput.addEventListener('change', runEvent);
+
+// function runEvent(e){
+//   console.log(`EVENT TYPE: ${e.type}`);
+//   //TARGET IS WHAT WE ARE TYPING IN, VALUE = What we type
+//   // console.log(e.target.value);
+//   // //gets input value
+//   // console.log(taskInput.value);
+//   // //this will clear out the form
+//   // taskInput.value = '';
+//   // e.preventDefault();
+// }
