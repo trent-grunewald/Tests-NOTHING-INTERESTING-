@@ -365,8 +365,10 @@ const heading = document.querySelector('h5');
 document.body.addEventListener('click', deleteItem);
 
 function deleteItem(e){
+  //looks at the clicked items classes and deletes it if the class is "Delete-item"
   if(e.target.parentElement.classList.contains('delete-item')){
     console.log('Deleted');
+    //removes the tasks parent element
     e.target.parentElement.parentElement.remove();
     }
   }
