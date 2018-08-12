@@ -109,49 +109,132 @@
 // ------------------------------------------------------------TRAVERSING THE DOM
 
 
+// let val;
+
+// //COLLECTION IS THE UL CLASS, SO EVERY LI INSIDE WILL BE RETURNED. 
+// const list = document.querySelector('ul.collection');
+// const listItem = document.querySelector('li.collection-item:first-child');
+
+// val = listItem;
+// //get ChildNodes (NODE LIST)
+// val = list.childNodes;
+// //get Children (Just the html collection) WILL BE USED MOSTLY
+// val = list.children;
+// val = list.children[2].textContent = "TESTY";
+
+// //get children of children
+// val = list.children[3].children;
+
+// //first child
+// val = list.firstChild;
+// //This one is better.
+// val = list.firstElementChild;
+
+// //last child
+// val = list.lastChild;
+// //Better form
+// val = list.lastElementChild;
+
+// //count child elements
+// val = list.childElementCount;
+
+// //get parent node
+// val = listItem.parentNode;
+
+// //get parent of parent.
+// val = listItem.parentElement.parentElement;
+
+// //get next siblings
+// val = listItem.nextSibling;
+// //better 
+// val = listItem.nextElementSibling;
+
+// //get previous sibling.
+// val = listItem.previousSibling;
+// //better
+// val = listItem.previousElementSibling;
+
+// console.log(val);
+
+
+//--------------------------------------------CREATING ELEMENTS--------------
+
+
+//creating an element
+// const li = document.createElement('li');
+
+// //ADDING A CLASS
+// li.className = 'collection-item';
+
+// //ADDING AN ID
+// li.id = 'new-Item';
+
+// //ADDING AN ATTRIBUTE
+// li.setAttribute('title', 'New Item!');
+
+// //ADDING TEXT
+// li.innerText = 'Hello!?';
+
+// //CREATE AND ADD CLASS AND CHILD TO LI
+// const link = document.createElement('a');
+// link.className = 'dleete-item secondary-content';
+// link.innerHTML = '<i class="fa fa-remove"></i>';
+
+// //ADDS IN CREATED HTML CONTENT ABOVE NO QUOTES
+// li.appendChild(link)
+
+// //ADD LI TO THE UL
+// document.querySelector('ul.collection').appendChild(li);
+
+// console.log(li);
+
+
+// --------------------------------------------------REMOVING / REPLACING ELEMENTS
+
+
+//REPLACING AN ELEMENT
+//create the element
+// const newHeading = document.createElement('h2');
+// //adding an id to it
+// newHeading.id = 'task-title';
+// //creates the text inside.
+// newHeading.appendChild(document.createTextNode('This is Text'));
+
+// //get old heading(the one we are replacing)
+// const oldHeading = document.getElementById('task-title');
+// //Parent(needed for targeting the replacement)
+// const cardAction = document.querySelector('.card-action');
+
+// //replaces the child in the parent.
+// cardAction.replaceChild(newHeading, oldHeading);
+
+
+// //REMOVE ELEMENT
+// const lis = document.querySelectorAll('li');
+// const uls = document.querySelector('ul');
+
+// const third = document.querySelector('li:nth-Child(3)').style.color = 'orange';
+
+// // remove li;
+// lis[3].remove();
+// //remove child;
+// uls.removeChild(lis[4]);
+
+
+//CLASSES AND ATTRIBUTES
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
 let val;
+//adds a class.
+link.classList.add('test');
+val = link;
+console.log(link);
 
-//COLLECTION IS THE UL CLASS, SO EVERY LI INSIDE WILL BE RETURNED. 
-const list = document.querySelector('ul.collection');
-const listItem = document.querySelector('li.collection-item:first-child');
 
-val = listItem;
-//get ChildNodes (NODE LIST)
-val = list.childNodes;
-//get Children (Just the html collection) WILL BE USED MOSTLY
-val = list.children;
-val = list.children[2].textContent = "TESTY";
-
-//get children of children
-val = list.children[3].children;
-
-//first child
-val = list.firstChild;
-//This one is better.
-val = list.firstElementChild;
-
-//last child
-val = list.lastChild;
-//Better form
-val = list.lastElementChild;
-
-//count child elements
-val = list.childElementCount;
-
-//get parent node
-val = listItem.parentNode;
-
-//get parent of parent.
-val = listItem.parentElement.parentElement;
-
-//get next siblings
-val = listItem.nextSibling;
-//better 
-val = listItem.nextElementSibling;
-
-//get previous sibling.
-val = listItem.previousSibling;
-//better
-val = listItem.previousElementSibling;
-
-console.log(val);
+//ADDING ATTRIBUTES
+//adds an href attribute
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'http://trentgrunewald.com');
+//Set attribute = .setAttribute('attribute', 'attribute value')
+//Get attribute = .getAttribute('attribute', 'attribute value')
+//Remove attribute = .removeAttribute('attribute', 'attribute value')
