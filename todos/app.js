@@ -6,7 +6,9 @@ const filter = document.querySelector('#filter');
 const taskInput = document.querySelector('#task');
 
 //Load all event listeners
-loadEventListeners() {
+loadEventListeners(); 
+
+function loadEventListeners() {
   //Add task event
   form.addEventListener('submit', addTask);
   //Remove task Event
@@ -14,7 +16,7 @@ loadEventListeners() {
   //Clear task event
   clearBtn.addEventListener('click', clearTasks);
   //Filter tasks
-  filter.addEventListener('keyUp', filterTasks);
+  filter.addEventListener('keyup', filterTasks);
 }
 
 //Add Task
@@ -24,7 +26,7 @@ function addTask(e) {
   }
 
   //Create task li
-  const li = docuemnt.createElement('li');
+  const li = document.createElement('li');
   //add a class
   li.className = 'collection-item';
   //Create and append text node
@@ -34,16 +36,33 @@ function addTask(e) {
   //add class
   link.className = 'delete-item secondary-content';
   //Add icon html
-  link.innerHTML = '<i class="fa fa-remove></i>';
+  link.innerHTML = '<i class="fas fa-eraser"></i>';
   //Append the link to li
   li.appendChild(link);
 
   //Append li to ul
   taskList.appendChild(li);
 
+  //Store in local storage
+  storeTaskInLocalStorage(taskInput.value);
+
   //Clear Input
   taskInput.value = '';
   e.preventDefault();
+}
+
+//Store Task
+function storeTaskInLocalStorage(task) {
+  let tasks;
+  if(localStorage.getItem('tasks') === null){
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.push(task);
+
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 //Remove Task
@@ -66,13 +85,13 @@ function clearTasks(e) {
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
 
-  //Query Selector returns a node list
-  document.querySelectorAll('collection-item').forEach();
+  //Use Query Selector to return values from a node list,  getElement would require us to convert to an array
+  document.querySelectorAll('.collection-item').forEach
   (function(task){
     const item = task.firstChild.textContent;
     if(item.toLowerCase().indexOf(text) != -1){
       task.style.display = 'block';
-    }else{
+    } else {
       task.style.display = 'none';
     }
   });

@@ -268,8 +268,8 @@
 
 
 // const clearBtn = document.querySelector('.clear-tasks');
-const card = document.querySelector('.card');
-const heading = document.querySelector('h5');
+// const card = document.querySelector('.card');
+// const heading = document.querySelector('h5');
 
 // //CLICK EVENT
 // clearBtn.addEventListener('click', runEvent);
