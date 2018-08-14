@@ -36,7 +36,7 @@ function getTasks() {
     //add class
     li.className = 'collection-item';
     //Create text node and append to li
-    li.appendChild(document.createTextNode(taskInput.value));
+    li.appendChild(document.createTextNode(task));
     //create new link element
     const link = document.createElement('a');
     //Add class
@@ -102,8 +102,29 @@ function removeTask(e) {
   if(e.target.parentElement.classList.contains('delete-item')){
     if(confirm('Remove task?')){
     e.target.parentElement.parentElement.remove();
+
+    //Remove task from LS
+    removeTaskFromLocalStorage(e.target.parentElement.parentElement);
     }
   }
+}
+
+//remove from LS Func
+function removeTaskFromLocalStorage(taskItem) {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function(task, index) {
+    if(taskItem.textContent === task){
+      tasks.splice(index, 1)
+    }
+  });
+
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 //Clear Tasks
