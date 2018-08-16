@@ -8,8 +8,8 @@ const person = {
 //date has to be capitalized
 function Alien(name, age, birthday) {
   this.name = name;
-  this.age = age;
   this.birthday = new Date(birthday);
+  this.age = birthday;
 }
 
 const trent = new Alien('Trent', 30, '02/01/1987');
