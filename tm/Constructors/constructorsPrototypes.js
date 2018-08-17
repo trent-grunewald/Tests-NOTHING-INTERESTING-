@@ -17,15 +17,46 @@
 
 // console.log(trent, rachel);
 
-//String Constructor (DO NOT USE)
 
-const name1 = 'jeff';
-const name2 = new String('jeff');
+// -------------------------------------------PROTOTYPES---------------------------
 
-console.log(typeof name2);
 
-if(name1 === 'jeff'){
-  console.log('yes');
-}else{
-  console.log('no');
+//Each object has a prototype and a prototype is an object itself.
+
+function Alien(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+  // this.calculateAge = function() {
+  //   const diff = Date.now() - this.dob.getTime();
+  //   const ageDate = new Date(diff);
+  //   return Math.abs(ageDate.getUTCFullYear() - 1970);
+  // }
 }
+
+const trent = new Alien("Trent", "Grunewald", '02/01/1987')
+
+//Calculate Age
+Alien.prototype.calculateAge = function() {
+  const diff = Date.now() - this.dob.getTime();
+  const ageDate = new Date(diff);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+//Get full name
+Alien.prototype.getFullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+}
+
+//Name Change
+Alien.prototype.getsMaried = function(newLastName) {
+  this.lastName = newLastName;
+}
+
+//Verify it has a property
+console.log(trent.hasOwnProperty('firstName'));
+
+console.log(trent.calculateAge())
+console.log(trent.getFullName());
+trent.getsMaried('johnson');
+console.log(trent.getFullName());
