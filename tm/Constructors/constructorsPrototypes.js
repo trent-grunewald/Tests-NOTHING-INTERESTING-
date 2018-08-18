@@ -107,21 +107,56 @@
 // ---------------------------------------------------------CREATING OBJECTS--------
 
 
-const alienPrototypes = {
-  greeting: function(){
-    return `Hello there earthling known as ${this.firstName} ${this.lastName}`;
-  },
-  getsMarried: function(newLastName) {
+// const alienPrototypes = {
+//   greeting: function(){
+//     return `Hello there earthling known as ${this.firstName} ${this.lastName}`;
+//   },
+//   getsMarried: function(newLastName) {
+//     this.lastName = newLastName;
+//   }
+// }
+
+// const trent = Object.create(alienPrototypes);
+// trent.firstName = 'Trent';
+// trent.lastName = 'Grunewald';
+// console.log(trent.greeting();
+
+// const tom = Object.create(alienPrototypes, {
+//   firstName: {value: 'Tom'},
+//   lastName: {value: 'Tommerson'},
+// });
+
+
+// -------------------------------------------------------------CLASSES------------
+
+
+class Alien {
+  constructor(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthday = new Date(dob);
+  }
+  greeting() {
+    return `Hello light traveler ${this.firstName} ${this.lastName}`;
+  }
+  calculateAge() {
+    const diff = Date.now() - this.birthday.getTime();
+    const ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+  getsMarried(newLastName) {
     this.lastName = newLastName;
   }
+  //USE STATICS IF IT IS GOING TO BE A STANDALONE FUNCTION / METHOD IN YOUR CLASS
+  static add(x, y) {
+    return x + y;
+  } 
 }
 
-const trent = Object.create(alienPrototypes);
-trent.firstName = 'Trent';
-trent.lastName = 'Grunewald';
-console.log(trent.greeting();
+const zu = new Alien('Zu', 'Azziri', '12-12-1912');
 
-const tom = Object.create(alienPrototypes, {
-  firstName: {value: 'Tom'},
-  lastName: {value: 'Tommerson'},
-});
+zu.getsMarried('Her');
+
+console.log(zu.greeting());
+
+console.log(Alien.add(3,2));
