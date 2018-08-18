@@ -166,31 +166,31 @@
 // --------------------------------------------ES6 INHERITANCE / SUB-CLASS----------
 
 
-class Person {
-  constructor(firstName, lastName){
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-  greeting(){
-    return `Hello there ${this.firstName} ${this.lastName}`;
-  }
-}
+// class Person {
+//   constructor(firstName, lastName){
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+//   greeting(){
+//     return `Hello there ${this.firstName} ${this.lastName}`;
+//   }
+// }
 
-  class Customer extends Person {
-    constructor(firstName, lastName, phone, membership) {
-      //SUPER is used for getting from the parent class, in this case "Person"
-      super(firstName, lastName);
-      //Define new parameters for the child class after SUPER
-      this.phone = phone;
-      this.membership = membership;
-    }
+//   class Customer extends Person {
+//     constructor(firstName, lastName, phone, membership) {
+//       //SUPER is used for getting from the parent class, in this case "Person"
+//       super(firstName, lastName);
+//       //Define new parameters for the child class after SUPER
+//       this.phone = phone;
+//       this.membership = membership;
+//     }
 
-    static getMembershipCost(){
-      return 500;
-    }
-  }
+//     static getMembershipCost(){
+//       return 500;
+//     }
+//   }
 
-  const john = new Customer ('John', 'Lynch', '509-555-5555', 'Gold');
-//Able to use the Person Class Greeting since Customer is a child/extended... NOT able to use Customer functions for Person
-  console.log(john.greeting();
-  console.log(Customer.getMembershipCost());
+//   const john = new Customer ('John', 'Lynch', '509-555-5555', 'Gold');
+// //Able to use the Person Class Greeting since Customer is a child/extended... NOT able to use Customer functions for Person
+//   console.log(john.greeting();
+//   console.log(Customer.getMembershipCost());
