@@ -18,7 +18,7 @@
 // console.log(trent, rachel);
 
 
-// -------------------------------------------PROTOTYPES---------------------------
+// ----------------------------------------ES5-PROTOTYPES---------------------------
 
 
 //Each object has a prototype and a prototype is an object itself.
@@ -62,7 +62,7 @@
 // console.log(trent.getFullName());
 
 
-// -----------------------------------------------PROTOTYPE INHERITANCE------------
+// -------------------------------------------ES5--PROTOTYPE INHERITANCE------------
 
 
 // function Alien(firstName, lastName) {
@@ -104,7 +104,7 @@
 //   console.log(customer1.greeting());
 
 
-// ---------------------------------------------------------CREATING OBJECTS--------
+// --------------------------------------------------ES5--CREATING OBJECTS--------
 
 
 // const alienPrototypes = {
@@ -127,36 +127,70 @@
 // });
 
 
-// -------------------------------------------------------------CLASSES------------
+// ---------------------------------------------------------ES6 CLASSES------------
+
+////ALL CLASSES START WITH CAPITAL LETTERS
+// class Alien {
+//   constructor(firstName, lastName, dob){
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.birthday = new Date(dob);
+//   }
+//   greeting() {
+//     return `Hello light traveler ${this.firstName} ${this.lastName}`;
+//   }
+//   calculateAge() {
+//     const diff = Date.now() - this.birthday.getTime();
+//     const ageDate = new Date(diff);
+//     return Math.abs(ageDate.getUTCFullYear() - 1970);
+//   }
+//   getsMarried(newLastName) {
+//     this.lastName = newLastName;
+//   }
+//   //USE STATICS IF IT IS GOING TO BE A STANDALONE FUNCTION / METHOD IN YOUR CLASS THAT DOESN'T USE "THIS"
+//   static add(x, y) {
+//     return x + y;
+//   } 
+// }
+
+// const zu = new Alien('Zu', 'Azziri', '12-12-1912');
+
+// zu.getsMarried('Her');
+
+// console.log(zu.greeting());
+
+// //Static return
+// console.log(Alien.add(3,2));
 
 
-class Alien {
-  constructor(firstName, lastName, dob){
+// --------------------------------------------ES6 INHERITANCE / SUB-CLASS----------
+
+
+class Person {
+  constructor(firstName, lastName){
     this.firstName = firstName;
     this.lastName = lastName;
-    this.birthday = new Date(dob);
   }
-  greeting() {
-    return `Hello light traveler ${this.firstName} ${this.lastName}`;
+  greeting(){
+    return `Hello there ${this.firstName} ${this.lastName}`;
   }
-  calculateAge() {
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
-  getsMarried(newLastName) {
-    this.lastName = newLastName;
-  }
-  //USE STATICS IF IT IS GOING TO BE A STANDALONE FUNCTION / METHOD IN YOUR CLASS
-  static add(x, y) {
-    return x + y;
-  } 
 }
 
-const zu = new Alien('Zu', 'Azziri', '12-12-1912');
+  class Customer extends Person {
+    constructor(firstName, lastName, phone, membership) {
+      //SUPER is used for getting from the parent class, in this case "Person"
+      super(firstName, lastName);
+      //Define new parameters for the child class after SUPER
+      this.phone = phone;
+      this.membership = membership;
+    }
 
-zu.getsMarried('Her');
+    static getMembershipCost(){
+      return 500;
+    }
+  }
 
-console.log(zu.greeting());
-
-console.log(Alien.add(3,2));
+  const john = new Customer ('John', 'Lynch', '509-555-5555', 'Gold');
+//Able to use the Person Class Greeting since Customer is a child/extended... NOT able to use Customer functions for Person
+  console.log(john.greeting();
+  console.log(Customer.getMembershipCost());
