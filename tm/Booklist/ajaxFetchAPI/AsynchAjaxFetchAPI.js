@@ -87,6 +87,7 @@ function loadCustomers(e) {
     if(this.status === 200) {
       const customers = JSON.parse(this.responseText);
         let output = '';  
+        //Itterates through the customer array and adds 1 for each customer
           customers.forEach(function(customers){
             output += 
               output = `
