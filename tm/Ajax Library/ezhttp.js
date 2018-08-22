@@ -44,7 +44,20 @@ ezHTTP.prototype.put = function(url, data, callback) {
 }
 
 //Make an HTTP DELETE REquest
+ezHTTP.prototype.delete = function(url, callback) {
+  this.http.open('DELETE', url, true);
 
+  let self = this;
+  this.http.onload = function(){
+    if(self.http.status === 200) {
+     callback(null, 'Shit Post Deleted' );
+    } else {
+      callback('Error: ' + self.http.status);
+    }
+  }
+
+  this.http.send();
+}
 
 
 // ES5---ES5---ES5---ES5---ES5---ES5---ES5---ES5---ES5---ES5---

@@ -1,7 +1,7 @@
 const http = new ezHTTP;
 
 // //Get Posts
-// http.get('https://jsonplaceholder.typicode.com/postss',
+// http.get('https://jsonplaceholder.typicode.com/posts',
 // function(err, whatever){
 //   if(err) {
 //     console.log(err);
@@ -52,3 +52,14 @@ const http = new ezHTTP;
 //     console.log(whatever);
 //   }
 // });
+
+
+//DELETE POST
+http.delete('https://jsonplaceholder.typicode.com/posts/1',
+function(err, whatever){
+  if(err) {
+    console.log(err);
+  } else {
+  console.log(whatever);
+  }
+});
