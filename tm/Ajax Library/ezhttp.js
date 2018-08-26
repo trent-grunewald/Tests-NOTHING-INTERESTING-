@@ -67,77 +67,128 @@
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-/**
-* @version 2.0.0
+// /**
+// * @version 2.0.0
+// * @author Trent Grunewald
+// * @licence MIT
+// **/
+
+// class ezHTTP {
+//   //---------------------------------Make an HTTP GET Request
+//   get(url) {
+//     return new Promise((resolve, reject) => {
+//       fetch(url)
+//     .then(res => res.json())
+//     .then(data => resolve(data))
+//     .catch(err => reject(err));
+//     });
+//   }
+
+
+//   //-------------------------------------Make HTTP POST REQUEST
+//   post(url, data) {
+//     return new Promise((resolve, reject) => {
+//       fetch(url, {
+//         method: 'POST',
+//         headers: {
+//           'content-type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//     })
+//     .then(res => res.json())
+//     .then(data => resolve(data))
+//     .catch(err => reject(err));
+//   });
+//  }
+
+
+// //----------------------------------------Make HTTP PUT / UPDATE REQUEST
+
+
+//   put(url, data) {
+//     return new Promise((resolve, reject) => {
+//       fetch(url, {
+//         method: 'PUT',
+//         headers: {
+//           'content-type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//       })
+//       .then(res => res.json())
+//       .then(data => resolve(data))
+//       .catch(err => reject(err));
+//     });
+//   }
+
+
+// //----------------------------------------Make HTTP DELETE REQUEST
+
+//   delete(url) {
+//     return new Promise((resolve, reject) => {
+//       fetch(url, {
+//         method: 'DELETE',
+//         headers: {
+//           'content-type': 'application/json'
+//         }
+//       })
+//       .then(res => res.json())
+//       .then(data => resolve('User Deleted'))
+//       .catch(err => reject(err));
+//     });
+//   }
+// }
+
+
+
+  // ----------------------ASYNC AWAIT VERSION OF THE ABOVE (es7)------------
+
+
+ /**
+* @version 3.0.0
 * @author Trent Grunewald
 * @licence MIT
 **/
 
 class ezHTTP {
-  //---------------------------------Make an HTTP GET Request
-  get(url) {
-    return new Promise((resolve, reject) => {
-      fetch(url)
-    .then(res => res.json())
-    .then(data => resolve(data))
-    .catch(err => reject(err));
-    });
-  }
+  // //---------------------------------Make an HTTP GET Request
+  // async get(url) {
+  //   const response = await fetch(url);
+  //   const resData = await response.json();
+  //   return resData;
+  //   }
+  // }
 
 
-  //-------------------------------------Make HTTP POST REQUEST
-  post(url, data) {
-    return new Promise((resolve, reject) => {
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(data => resolve(data))
-    .catch(err => reject(err));
+// --------------------------------------MAKE A POST REQUEST
+
+
+async post(url, data) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
   });
- }
-
-
-//----------------------------------------Make HTTP PUT / UPDATE REQUEST
-
-
-  put(url, data) {
-    return new Promise((resolve, reject) => {
-      fetch(url, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    });
-  }
-
-
-//----------------------------------------Make HTTP DELETE REQUEST
-
-  delete(url) {
-    return new Promise((resolve, reject) => {
-      fetch(url, {
-        method: 'DELETE',
-        headers: {
-          'content-type': 'application/json'
-        }
-      })
-      .then(res => res.json())
-      .then(data => resolve('User Deleted'))
-      .catch(err => reject(err));
-    });
-  }
+  const resData = await response.json();
+  return resData;
 }
 
 
+// --------------------------------------MAKE A PUT REQUEST
 
-  
+
+async put(url, data) {
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  });
+  const resData = await response.json();
+  return resData;
+}
+
+
+}

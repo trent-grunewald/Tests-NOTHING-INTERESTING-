@@ -80,7 +80,7 @@ const http = new ezHTTP;
 //   .then(data => console.log(data))
 //   .catch(err => console.log(err));
 
-////User Data
+//User Data
 const data = {
   name: 'Trent',
   username: 'Se_7_eN',
@@ -100,6 +100,20 @@ const data = {
 
 
 //DELETE Users
-    http.delete('https://jsonplaceholder.typicode.com/users/2')
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
+    // http.delete('https://jsonplaceholder.typicode.com/users/2')
+    //   .then(data => console.log(data))
+    //   .catch(err => console.log(err));
+
+
+  // -----------------------------------------ASYNC AWAIT-------------------
+
+
+//   // Get users
+// http.get('https://jsonplaceholder.typicode.com/users')
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
+
+  //Update Post
+  http.post('https://jsonplaceholder.typicode.com/users', data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
