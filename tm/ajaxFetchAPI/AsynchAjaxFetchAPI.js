@@ -158,9 +158,7 @@ function getText(){
       console.log(data);
     })
     //Logs the error
-    .catch(err => {
-      console.log(err);
-    });
+    .catch(err => console.log(err));
 }
 
 
@@ -172,20 +170,15 @@ document.getElementById('button2').addEventListener('click', getJSON);
 function getJSON() {
   fetch('movies.json')
    .then(res => res.json())
-   
    .then(data => {
      console.log(data);
      let output = '';
      data.forEach(movie => {
        output += `<li>${movie.title}</li>`;
      });
-
      document.getElementById('output').innerHTML = output;
    })
-
-   .catch(err => {
-     console.log(err);
-   });
+   .catch(err => console.log(err));
 }
 
 
@@ -206,7 +199,6 @@ function getAPI() {
       output += `<li>${user}</li>`;
     });
     document.getElementById('output').innerHTML = output;
-    
   })
-  .catch = (err) => console.log(err);
+  .catch = err => console.log(err);
   };
