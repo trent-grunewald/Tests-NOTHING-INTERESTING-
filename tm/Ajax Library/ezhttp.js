@@ -179,16 +179,25 @@ async post(url, data) {
 
 
 async put(url, data) {
-  const response = await fetch(url, {
-    method: 'PUT',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
-  const resData = await response.json();
-  return resData;
-}
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    const resData = await response.json();
+    return resData;
+  }
 
-
+  async delete(url) {
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      },
+    });
+    const resData = 'User deleted';
+    return resData;
+  }
 }
