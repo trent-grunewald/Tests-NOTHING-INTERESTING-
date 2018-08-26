@@ -109,27 +109,53 @@
 // ----------------------------------------------------------CALLBACK FUNCTIONS---
 
 
-const posts = [
-  {title: 'post one', body: 'this is body 1'},
-  {title: 'post Two', body: 'this is body 2'},
-  {title: 'post Three', body: 'this is body 3'},
-];
+// const posts = [
+//   {title: 'post one', body: 'this is body 1'},
+//   {title: 'post Two', body: 'this is body 2'},
+//   {title: 'post Three', body: 'this is body 3'},
+// ];
 
-function createPost(post, callback) {
-  setTimeout(function() {
-    posts.push(post);
-    callback();
-  },2000)
+// function createPost(post, callback) {
+//   setTimeout(function() {
+//     posts.push(post);
+//     callback();
+//   },2000)
+// }
+
+// function getPosts() {
+//   setTimeout(function() {
+//     let output = '';
+//     posts.forEach(function(post) {
+//       output += `<li>${post.title}</li>`;
+//     });
+//     document.body.innerHTML = output;
+//   }, 1000);
+// }
+
+// createPost({title: 'Post Four', body: 'this is post 4'}, getPosts);
+
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// LATEST ES6 STANDARDS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+// ---------------------------FETCH API-----------------------------------
+
+
+document.getElementById('button1').addEventListener('click', getText);
+
+function getText(){
+  //Fetch returns a Promise
+  fetch('data.txt')
+    .then(function(res){
+      return res.text();
+    })
+    .then(function(data) {
+      console.log(data);
+    })
 }
-
-function getPosts() {
-  setTimeout(function() {
-    let output = '';
-    posts.forEach(function(post) {
-      output += `<li>${post.title}</li>`;
-    });
-    document.body.innerHTML = output;
-  }, 1000);
-}
-
-createPost({title: 'Post Four', body: 'this is post 4'}, getPosts);
