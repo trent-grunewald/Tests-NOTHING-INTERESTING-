@@ -594,57 +594,25 @@
 // ----------------------------------SCOPE-------------------------------
 
 
-// var a = 1;
-// let b = 2;
-// const c = 3;
+var a = 1;
+let b = 2;
+const c = 3;
 
-// //FUNCTION SCOPE
-// // function test() {
-// //   var a = 4;
-// //   let b = 5;
-// //   const c = 6;
-// //   console.log('function scope ', a, b ,c);
-// // }
-
-// //BLOCK SCOPE
-// //var will be changed in block level scopes, thats why Let and Const are better
-// if(true){
+//FUNCTION SCOPE
+// function test() {
 //   var a = 4;
 //   let b = 5;
-//   const c =6;
-//   console.log('BLOCK SCOPE ', a, b, c)
+//   const c = 6;
+//   console.log('function scope ', a, b ,c);
 // }
 
-// console.log('global scope: ', a, b, c);
-
-
-// -----------------------------ASYNC & AWAIT (ES7)---------------------
-
-//async makes it return a promise
-// async function myFunction() {
-//   return "Hi";
-
-//   const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => resolve('hello'), 1000);
-//   });
-//   // AWAIT waits for the promise to get resolved, then fires.
-//   const res = await promise;
-//   return res;
-// }
-
-// myFunction()
-//   .then(res => console.log(res))
-
-async function getUsers() {
-  //await response of the fetch call
-  const response = await fetch
-  ('https://ron-swanson-quotes.herokuapp.com/v2/quotes');
-
-  //Only proceeds once its resolved
-  const data = await response.json();
-
-  //Only proceeds once the second promise is resolved
-  return data;
+//BLOCK SCOPE
+//var will be changed in block level scopes, thats why Let and Const are better
+if(true){
+  var a = 4;
+  let b = 5;
+  const c =6;
+  console.log('BLOCK SCOPE ', a, b, c)
 }
 
-getUsers().then(users => console.log(users));
+console.log('global scope: ', a, b, c);

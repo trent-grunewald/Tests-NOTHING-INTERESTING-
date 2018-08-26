@@ -147,58 +147,76 @@
 // ---------------------------FETCH API-----------------------------------
 
 
-//-----------------------GET LOCAL TEXT FILE
-document.getElementById('button1').addEventListener('click', getText);
+// //-----------------------GET LOCAL TEXT FILE
+// document.getElementById('button1').addEventListener('click', getText);
 
-function getText(){
-  //Fetch returns a Promise
-  fetch('data.txt')
-    .then(res => res.text())
-    .then(data => {
-      console.log(data);
-    })
-    //Logs the error
-    .catch(err => console.log(err));
+// function getText(){
+//   //Fetch returns a Promise
+//   fetch('data.txt')
+//     .then(res => res.text())
+//     .then(data => {
+//       console.log(data);
+//     })
+//     //Logs the error
+//     .catch(err => console.log(err));
+// }
+
+
+// // -----------------------------------GET JSON DATA
+
+
+// document.getElementById('button2').addEventListener('click', getJSON);
+
+// function getJSON() {
+//   fetch('movies.json')
+//    .then(res => res.json())
+//    .then(data => {
+//      console.log(data);
+//      let output = '';
+//      data.forEach(movie => {
+//        output += `<li>${movie.title}</li>`;
+//      });
+//      document.getElementById('output').innerHTML = output;
+//    })
+//    .catch(err => console.log(err));
+// }
+
+
+// // -----------------------------------GET API Data
+
+
+// document.getElementById('button3').addEventListener('click', getAPI);
+
+// function getAPI() {
+//   fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+//   .then(res =>{
+//     return res.json();
+//   })
+//   .then(data => {
+//     console.log(data);
+//     let output = '';
+//     data.forEach(user => {
+//       output += `<li>${user}</li>`;
+//     });
+//     document.getElementById('output').innerHTML = output;
+//   })
+//   .catch = err => console.log(err);
+//   };
+
+
+// --------------------------------------ASYNC AWAIT (ES7)-------------
+
+
+async function getUsers() {
+  //await response of the fetch call
+  const response = await fetch
+  ('https://ron-swanson-quotes.herokuapp.com/v2/quotes');
+
+  //Only proceeds once its resolved
+  const data = await response.json();
+
+  //Only proceeds once the second promise is resolved
+  return data;
 }
 
-
-// -----------------------------------GET JSON DATA
-
-
-document.getElementById('button2').addEventListener('click', getJSON);
-
-function getJSON() {
-  fetch('movies.json')
-   .then(res => res.json())
-   .then(data => {
-     console.log(data);
-     let output = '';
-     data.forEach(movie => {
-       output += `<li>${movie.title}</li>`;
-     });
-     document.getElementById('output').innerHTML = output;
-   })
-   .catch(err => console.log(err));
-}
-
-
-// -----------------------------------GET API Data
-
-
-document.getElementById('button3').addEventListener('click', getAPI);
-
-function getAPI() {
-  fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
-  .then(res =>{
-    return res.json();
-  })
-  .then(data => {
-    console.log(data);
-    let output = '';
-    data.forEach(user => {
-      output += `<li>${user}</li>`;
-    });
-    document.getElementById('output').innerHTML = output;
-  })
-  .catch = err => console.log(err);
-  };
+getUsers().then(users => console.log(users));
