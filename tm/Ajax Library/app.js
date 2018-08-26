@@ -54,12 +54,52 @@ const http = new ezHTTP;
 // });
 
 
-//DELETE POST
-http.delete('https://jsonplaceholder.typicode.com/posts/1',
-function(err, whatever){
-  if(err) {
-    console.log(err);
-  } else {
-  console.log(whatever);
-  }
-});
+// //DELETE POST
+// http.delete('https://jsonplaceholder.typicode.com/posts/1',
+// function(err, whatever){
+//   if(err) {
+//     console.log(err);
+//   } else {
+//   console.log(whatever);
+//   }
+// });
+
+
+
+
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6 ES6!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+// //Get Users
+// http.get('https://jsonplaceholder.typicode.com/users')
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
+
+////User Data
+const data = {
+  name: 'Trent',
+  username: 'Se_7_eN',
+  email: 'Trent@trentgrunewald.com'
+}
+
+//Create Post
+// http.post('https://jsonplaceholder.typicode.com/users', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
+
+
+// //Update Post
+//     http.put('https://jsonplaceholder.typicode.com/users/2', data)
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+
+
+//DELETE Users
+    http.delete('https://jsonplaceholder.typicode.com/users/2')
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
