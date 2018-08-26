@@ -147,47 +147,46 @@
 // ---------------------------FETCH API-----------------------------------
 
 
-////-----------------------GET LOCAL TEXT FILE
-// document.getElementById('button1').addEventListener('click', getText);
+//-----------------------GET LOCAL TEXT FILE
+document.getElementById('button1').addEventListener('click', getText);
 
-// function getText(){
-//   //Fetch returns a Promise
-//   fetch('data.txt')
-//     .then(function(res){
-//       return res.text();
-//     })
-//     .then(function(data) {
-//       console.log(data);
-//     })
-//     //Logs the error
-//     .catch(function(err) {
-//       console.log(err);
-//     });
-// }
+function getText(){
+  //Fetch returns a Promise
+  fetch('data.txt')
+    .then(res => res.text())
+    .then(data => {
+      console.log(data);
+    })
+    //Logs the error
+    .catch(err => {
+      console.log(err);
+    });
+}
 
 
 // -----------------------------------GET JSON DATA
 
 
-// document.getElementById('button2').addEventListener('click', getJSON);
+document.getElementById('button2').addEventListener('click', getJSON);
 
-// function getJSON() {
-//   fetch('movies.json')
-//    .then(function(res) {
-//      return res.json();
-//    })
-//    .then(function(data) {
-//      console.log(data);
-//      let output = '';
-//      data.forEach(function(movie){
-//        output += `<li>${movie.title}</li>`;
-//      });
-//      document.getElementById('output').innerHTML = output;
-//    })
-//    .catch(function(err) {
-//      console.log(err);
-//    });
-// }
+function getJSON() {
+  fetch('movies.json')
+   .then(res => res.json())
+   
+   .then(data => {
+     console.log(data);
+     let output = '';
+     data.forEach(movie => {
+       output += `<li>${movie.title}</li>`;
+     });
+
+     document.getElementById('output').innerHTML = output;
+   })
+
+   .catch(err => {
+     console.log(err);
+   });
+}
 
 
 // -----------------------------------GET API Data
@@ -197,13 +196,13 @@ document.getElementById('button3').addEventListener('click', getAPI);
 
 function getAPI() {
   fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
-  .then(function(res){
+  .then(res =>{
     return res.json();
   })
-  .then(function(data) {
+  .then(data => {
     console.log(data);
     let output = '';
-    data.forEach(function(user) {
+    data.forEach(user => {
       output += `<li>${user}</li>`;
     });
     document.getElementById('output').innerHTML = output;
