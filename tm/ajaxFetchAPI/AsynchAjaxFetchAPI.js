@@ -207,8 +207,7 @@ function getAPI() {
       output += `<li>${user}</li>`;
     });
     document.getElementById('output').innerHTML = output;
+    
   })
-  .catch(function(err) {
-    console.log(err);
-  });
-}
+  .catch = (err) => console.log(err);
+  };
